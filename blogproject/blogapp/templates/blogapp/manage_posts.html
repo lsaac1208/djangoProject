@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Manage Posts</h1>
+  {% for post in posts %}
+    <h3><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h3>
+    <p>{{ post.content|truncatewords:50 }}</p>
+    <a href="{% url 'post_edit' post.id %}">Edit</a>
+    <a href="{% url 'post_delete' post.id %}">Delete</a>
+  {% endfor %}
+{% endblock %}

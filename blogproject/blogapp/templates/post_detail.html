@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>{{ post.title }}</h1>
+<div class="post-meta">
+    作者：<span class="post-author">{{ post.author }}</span>
+    发布于：<span class="post-date">{{ post.created_at }}</span>
+
+</div>
+{#  <p>{{ post.content }}</p>#}
+    <div style="text-align: left;">{{ post.content|safe }}</div>
+{% endblock %}
